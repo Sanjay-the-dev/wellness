@@ -1,0 +1,63 @@
+#navbar-button,#navbar-button:active, #navbar-button:focus{
+
+    outline: none;
+    box-shadow: none;
+    border: transparent;
+}
+
+.E-Content_Box_D{
+
+    border: 1px solid rgb(56, 56, 56);
+    background-color: #121418;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px  rgb(48, 48, 48);
+}
+.E-Content_Box_L{
+
+    border: 1px solid rgb(177, 177, 177);  
+    background-color:#fff ;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px  rgb(158, 158, 158);
+}
+
+.E-complete_btn,.E-complete_btn:hover, .E-complete_btn:active{
+
+    background-color: #58c57200;
+    color: #0468fd;
+    border: none;
+
+}
+
+.E-goal_list{
+
+    background-color: rgba(58, 97, 83, 0.277);
+    border-radius: 8px;
+
+    transition: all 0.2s ease-in-out;
+}
+.E-goal_list:hover{
+
+    transform: scale(103%);
+
+}
+
+    .E-nav_item:hover{
+
+        transition: all 0.3s ease-in-out;
+    }
+
+@media (max-width:762px) {
+    
+    .E-goal_list:hover{
+
+    transform: scale(100%);
+
+    }
+}
+@media (min-width:762px) {
+    
+    .E-nav_item:hover{
+
+    transform: translateY(-6px);
+    }
+}
