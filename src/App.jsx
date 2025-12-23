@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <ToastContainer position='top-center' />
+      <ToastContainer position='top-center' limit={1} />
       <NavBar/>
       <Routes>
         <Route path='/' element= {<Dashboard/>}/>

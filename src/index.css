@@ -46,7 +46,22 @@
         transition: all 0.3s ease-in-out;
     }
 
-@media (max-width:762px) {
+
+.E-showConfirm{
+
+     color: #fff;
+     width: 400px;
+     height: 250px;
+     background-color: #6f2cf4;
+     border-color: #121418;
+     outline: none;
+     padding: 2rem;
+     text-align: center;
+    box-shadow: 2px 2px 5px  #6f2cf4;
+
+
+}
+@media (max-width:762px) { 
     
     .E-goal_list:hover{
 

@@ -52,6 +52,7 @@ const Goals = () => {
 
 
   const notify = ()=>{
+    toast.dismiss();
     toast.success ("Task has been completed successfully !",{style:{color:"#000", textAlign:"center"}})
   }
 

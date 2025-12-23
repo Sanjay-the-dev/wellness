@@ -21,6 +21,7 @@ const Dashboard = () => {
       return;
     }
     const notify = ()=>{
+      toast.dismiss();
       toast.success(` Task Completed !\n"Another step toward better health!" `,{style:{color:"#000", whiteSpace:"pre-line", textAlign:"center"}})
     }
 
@@ -39,6 +40,7 @@ const Dashboard = () => {
       return;
     }
     const notify = ()=>{
+      toast.dismiss();
       toast.success(` Task Completed !\n"Well done! You just earned a moment of calm. 🌿" `,{style:{color:"#000", whiteSpace:"pre-line", textAlign:"center"}})
     }
 
@@ -57,6 +59,7 @@ const Dashboard = () => {
       return;
     }
     const notify = ()=>{
+      toast.dismiss();
       toast.success(` Task Completed !\n"Workout done! You're getting stronger! 💪🔥" `,{style:{color:"#000", whiteSpace:"pre-line", textAlign:"center"}})
     }
 
@@ -76,6 +79,7 @@ const Dashboard = () => {
       return;
     }
     const notify = ()=>{
+      toast.dismiss();
       toast.success(` Task Completed !\n"Balanced digital habits lead to a healthy mind ✨" `,{style:{color:"#000", whiteSpace:"pre-line", textAlign:"center"}})
     }
 

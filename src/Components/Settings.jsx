@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { addExampleDays, checkNewDay } from '../Store/habitSlice';
@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 
 const Settings = () => {
 
+  const [showConfirm,setShowConfirm]=useState(false)
   const theme = useSelector((state)=>state.Theme.mode)
   const dispatch = useDispatch();
 
@@ -39,16 +40,44 @@ const Settings = () => {
   },[theme])
 
   const notify1= ()=>{
+    toast.dismiss()
     toast.error("All data has been reset ! Please refresh the page.",{style:{color:"#000", textAlign:"center",fontSize:"1.2rem"}})
   }
   const notify2= ()=>{
+    toast.dismiss()
     toast.success(" Example 7Days added !",{style:{color:"#000", textAlign:"center",fontSize:"1.2rem"}})
   }
+  const resetData = () =>{
+    notify1();
+    localStorage.clear();
+    setShowConfirm(false)
+  }
   return (
-    <div id='Dashboard-Body' className='pt-5' >
+    <div id='Dashboard-Body'  >
 
 
-      <div className="E-Choose_Box mx-auto py-3 px-1 px-lg-4" style={{maxWidth:"600px" }}>
+               {/*           confirm box */}
+    {showConfirm && (
+      <div className='position-fixed   ' style={{backdropFilter:"blur(10px)", width:"100vw", height:"100%"}}> 
+        <div className='E-showConfirm position-relative  start-50  translate-middle border rounded  ' style={{top:"43%"}}  >
+          <h1>Are you sure?</h1>
+          <p className='fs-5'>This will delete all saved data!</p>
+
+          <div className='pt-2 pt-lg-4 d-flex justify-content-around'>
+            <button className=' btn btn-primary  fs-4  px-4 ' onClick={()=>{resetData()}}>
+              Yes 
+            </button>
+            <button className=' btn btn-primary fs-4   px-2 ' onClick={()=> setShowConfirm(false)}>
+              Cancel 
+            </button>
+          </div>
+
+        </div>
+      </div>
+    )}
+
+
+      <div className="E-Choose_Box mx-auto py-3 px-1 px-lg-4 pt-5" style={{maxWidth:"600px" }}>
         <h2 className='display-5 fw-normal' >Settings</h2>
         <hr />
         <div className="d-flex align-items-center justify-content-between  px-1 px-lg-2 " > 
@@ -68,7 +97,7 @@ const Settings = () => {
 
         <div className="d-flex align-items-center justify-content-between  px-1 px-lg-2 " > 
         <h4  >Reset All Data</h4>
-        <button className=' rounded p-1 px-lg-3 fs-5 bg-danger text-light' style={{border:"none"}} onClick={()=>{ localStorage.clear(); notify1()}}>Reset</button>
+        <button className=' rounded p-1 px-lg-3 fs-5 bg-danger text-light' style={{border:"none"}} onClick={()=>{ setShowConfirm(true)/* localStorage.clear(); notify1() */}}>Reset</button>
 
         </div>
 
